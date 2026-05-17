@@ -101,7 +101,7 @@
     <string name="chua_co_vi_tri">Chưa có vị trí</string>
     <string name="khong_co_ghi_chu">Không có ghi chú</string>
     <string name="chinh_sua_goc_cay">Chỉnh sửa gốc cây</string>
-    <string name="xem_nhat_ky">Xem nhật ký chăm sóc</string>
+    <string name="xem_nhat_ky_goc_cay">Xem nhật ký chăm sóc</string>
     <string name="quet_qr_moi">Quét mã QR khác</string>
 
     <!-- QR Generate / Save / Share -->
@@ -141,7 +141,6 @@
     <string name="ten_phan">Tên phân bón</string>
     <string name="ten_thuoc">Tên thuốc</string>
     <string name="lieu_luong">Liều lượng</string>
-    <string name="don_vi">Đơn vị</string>
     <string name="cach_bon">Cách bón</string>
     <string name="ly_do_phun">Lý do phun</string>
     <string name="them_dong">+ Thêm dòng</string>
@@ -181,7 +180,7 @@
     <string name="stat_nhat_ky_hom_nay">Hôm nay</string>
     <string name="dashboard_manh_dat">Mảnh đất của bạn</string>
     <string name="dashboard_nhat_ky_gan_nhat">Nhật ký gần nhất</string>
-    <string name="chua_co_nhat_ky">Chưa có nhật ký nào</string>
+    <string name="dashboard_chua_co_nhat_ky">Chưa có nhật ký nào</string>
     <string name="canh_bao_bo_quen">cây chưa được chăm sóc &gt; 7 ngày!</string>
 
     <!-- DanhGiaChamSoc -->

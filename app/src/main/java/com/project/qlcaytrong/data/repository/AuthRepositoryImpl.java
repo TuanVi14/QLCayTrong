@@ -60,9 +60,9 @@ public class AuthRepositoryImpl implements AuthRepository {
                     return;
                 }
 
-                String userId = user.getUser().getUid();
-                String displayName = user.getUser().getDisplayName() != null
-                        ? user.getUser().getDisplayName() : "";
+                String userId = user.getUid();
+                String displayName = user.getDisplayName() != null
+                        ? user.getDisplayName() : "";
 
                 // Lưu session
                 sessionManager.saveSession(userId, email.trim(), displayName);

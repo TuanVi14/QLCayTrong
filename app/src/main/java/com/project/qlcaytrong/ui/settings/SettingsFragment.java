@@ -14,7 +14,6 @@ import androidx.fragment.app.Fragment;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.project.qlcaytrong.BuildConfig;
 import com.project.qlcaytrong.databinding.FragmentSettingsBinding;
 import com.project.qlcaytrong.sync.SyncManager;
 import com.project.qlcaytrong.ui.auth.LoginActivity;
@@ -50,7 +49,7 @@ public class SettingsFragment extends Fragment {
         }
 
         // App version
-        binding.tvVersion.setText("Phiên bản " + BuildConfig.VERSION_NAME);
+        binding.tvVersion.setText("Phiên bản 1.0");
 
         // Dark mode toggle — read current mode
         boolean isDark = AppCompatDelegate.getDefaultNightMode()

@@ -77,6 +77,9 @@ public class NhatKyEntity {
 
     // ==================== Constructor ====================
 
+    public NhatKyEntity() {}
+
+
     public NhatKyEntity(@NonNull String id,
                         @Nullable String gocCayId,
                         @Nullable String cayTrongId,

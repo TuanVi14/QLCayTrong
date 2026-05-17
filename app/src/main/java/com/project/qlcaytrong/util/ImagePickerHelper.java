@@ -200,7 +200,7 @@ public class ImagePickerHelper {
         new MaterialAlertDialogBuilder(activity)
             .setTitle(R.string.camera_permission_denied_title)
             .setMessage(msg)
-            .setPositiveButton(isPermanentDenied ? R.string.mo_cai_dat : "OK", (d, w) -> {
+            .setPositiveButton(isPermanentDenied ? activity.getString(R.string.mo_cai_dat) : "OK", (d, w) -> {
                 if (isPermanentDenied) openAppSettings();
                 else d.dismiss();
             })

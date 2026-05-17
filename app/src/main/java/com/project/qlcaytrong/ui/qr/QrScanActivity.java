@@ -146,8 +146,6 @@ public class QrScanActivity extends AppCompatActivity {
             .setBeepEnabled(true)
             .setBarcodeImageEnabled(false)
             .setOrientationLocked(false)
-            // Tắt camera trước (false = dùng camera sau)
-            .setFrontLight(ScanOptions.FRONT_LIGHT_AUTO)
             .setCaptureActivity(CustomCaptureActivity.class);
 
         qrScanLauncher.launch(options);

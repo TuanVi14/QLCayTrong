@@ -32,6 +32,7 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
 }
 
@@ -62,6 +63,7 @@ dependencies {
 
     // WorkManager
     implementation("androidx.work:work-runtime:2.10.1")
+    implementation("com.google.guava:guava:33.4.8-android")
 
     // Navigation Component
     implementation("androidx.navigation:navigation-fragment:2.8.9")
@@ -97,4 +99,9 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+}
+configurations.all {
+    resolutionStrategy {
+        force("com.google.guava:guava:33.4.8-android")
+    }
 }

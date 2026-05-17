@@ -59,6 +59,9 @@ public class CayTrongEntity {
 
     // ==================== Constructor ====================
 
+    public CayTrongEntity() {}
+
+
     public CayTrongEntity(@NonNull String id,
                           String manhDatId,
                           String userId,

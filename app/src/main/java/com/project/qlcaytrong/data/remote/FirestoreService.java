@@ -54,12 +54,12 @@ public class FirestoreService {
 
     public interface OnSyncListener {
         void onSuccess();
-        void onFailure(Exception e);
+        default void onFailure(Exception e) {}
     }
 
     public interface OnFetchListener<T> {
         void onSuccess(List<T> items);
-        void onFailure(Exception e);
+        default void onFailure(Exception e) {}
     }
 
     // ==================== Helper ====================

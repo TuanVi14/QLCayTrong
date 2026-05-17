@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.project.qlcaytrong.databinding.ActivitySplashBinding;
-import com.project.qlcaytrong.ui.main.MainActivity;
+import com.project.qlcaytrong.MainActivity;
 import com.project.qlcaytrong.viewmodel.AuthViewModel;
 
 /**

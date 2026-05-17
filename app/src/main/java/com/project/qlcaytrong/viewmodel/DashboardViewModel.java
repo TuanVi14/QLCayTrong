@@ -93,16 +93,9 @@ public class DashboardViewModel extends AndroidViewModel {
         executor.execute(() -> {
             DashboardStats s = new DashboardStats();
 
-            // COUNT mảnh đất
-            List<?> md = db.manhDatDao().getAllPendingSync(); // không lý tưởng — sẽ cải thiện với COUNT query
-            // Tạm: count qua Room query hết
             try {
-                s.totalManhDat = android.database.DatabaseUtils.queryNumEntries(
-                    db.getOpenHelper().getReadableDatabase(), "manh_dat",
-                    "user_id = ?", new String[]{ userId });
-                s.totalCayTrong = android.database.DatabaseUtils.queryNumEntries(
-                    db.getOpenHelper().getReadableDatabase(), "cay_trong",
-                    "user_id = ? AND trang_thai = 'DANG_TRONG'", new String[]{ userId });
+                s.totalManhDat = countRows("manh_dat", "user_id = ?", new String[]{ userId });
+                s.totalCayTrong = countRows("cay_trong", "user_id = ? AND trang_thai = ?", new String[]{ userId, "DANG_TRONG" });
             } catch (Exception e) {
                 s.totalManhDat = 0; s.totalCayTrong = 0;
             }
@@ -146,10 +139,7 @@ public class DashboardViewModel extends AndroidViewModel {
 
     private int countNhatKyToday(long startOfDay) {
         try {
-            return (int) android.database.DatabaseUtils.queryNumEntries(
-                db.getOpenHelper().getReadableDatabase(), "nhat_ky",
-                "user_id = ? AND ngay_thuc_hien >= ?",
-                new String[]{ userId, String.valueOf(startOfDay) });
+            return countRows("nhat_ky", "user_id = ? AND ngay_thuc_hien >= ?", new String[]{ userId, String.valueOf(startOfDay) });
         } catch (Exception e) { return 0; }
     }
 
@@ -167,6 +157,16 @@ public class DashboardViewModel extends AndroidViewModel {
             cursor.close();
             return count;
         } catch (Exception e) { return 0; }
+    }
+
+    private int countRows(String table, String where, String[] args) {
+        android.database.Cursor cursor = db.getOpenHelper().getReadableDatabase().query(
+            "SELECT COUNT(*) FROM " + table + " WHERE " + where, args);
+        try {
+            return cursor.moveToFirst() ? cursor.getInt(0) : 0;
+        } finally {
+            cursor.close();
+        }
     }
 
     private long getStartOfDay() {

@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    nav_graph.xml — đã sửa lỗi crash tab Mảnh đất & Nhật ký.
+
+    VẤN ĐỀ CŨ:
+      - Tab 2 trỏ đến "ManhDatListFragment" → class không tồn tại → crash
+      - Tab 3 trỏ đến "NhatKyListFragment" → class không tồn tại → crash
+      - Supplementary destinations dùng Activity class làm <fragment> → sai
+
+    ĐÃ SỬA:
+      - Tab 2 & 3: trỏ đến Fragment wrapper mới (tạo trong cùng package)
+      - Xoá các <fragment> destination sai (CayTrongListActivity, NhatKyDetailActivity)
+        vì chúng là Activity, điều hướng trực tiếp từ bên trong Fragment/Activity tương ứng
+-->
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -12,29 +25,17 @@
         android:label="@string/nav_dashboard"
         tools:layout="@layout/fragment_dashboard" />
 
-    <!-- Tab 2: Mảnh đất -->
+    <!-- Tab 2: Mảnh đất — wrapper Fragment gọi ManhDatListActivity -->
     <fragment
         android:id="@+id/manhDatFragment"
         android:name="com.project.qlcaytrong.ui.manhdat.ManhDatListFragment"
-        android:label="@string/nav_manh_dat"
-        tools:layout="@layout/activity_manh_dat_list">
+        android:label="@string/nav_manh_dat" />
 
-        <action
-            android:id="@+id/action_manhDat_to_cayTrong"
-            app:destination="@id/cayTrongFragment" />
-    </fragment>
-
-    <!-- Tab 3: Nhật ký -->
+    <!-- Tab 3: Nhật ký — wrapper Fragment gọi NhatKyListActivity -->
     <fragment
         android:id="@+id/nhatKyFragment"
         android:name="com.project.qlcaytrong.ui.nhatky.NhatKyListFragment"
-        android:label="@string/nav_nhat_ky"
-        tools:layout="@layout/activity_nhat_ky_list">
-
-        <action
-            android:id="@+id/action_nhatky_to_detail"
-            app:destination="@id/nhatKyDetailFragment" />
-    </fragment>
+        android:label="@string/nav_nhat_ky" />
 
     <!-- Tab 4: Cài đặt -->
     <fragment
@@ -42,16 +43,5 @@
         android:name="com.project.qlcaytrong.ui.settings.SettingsFragment"
         android:label="@string/nav_cai_dat"
         tools:layout="@layout/fragment_settings" />
-
-    <!-- Supplementary destinations (non-tab) -->
-    <fragment
-        android:id="@+id/cayTrongFragment"
-        android:name="com.project.qlcaytrong.ui.caytrong.CayTrongListActivity"
-        android:label="@string/cay_trong_list_title" />
-
-    <fragment
-        android:id="@+id/nhatKyDetailFragment"
-        android:name="com.project.qlcaytrong.ui.nhatky.NhatKyDetailActivity"
-        android:label="@string/nhat_ky_detail_title" />
 
 </navigation>

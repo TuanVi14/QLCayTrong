@@ -11,7 +11,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.project.qlcaytrong.databinding.ActivityLoginBinding;
-import com.project.qlcaytrong.ui.main.MainActivity;
+import com.project.qlcaytrong.MainActivity;
 import com.project.qlcaytrong.util.AuthResult;
 import com.project.qlcaytrong.viewmodel.AuthViewModel;
 

@@ -53,6 +53,9 @@ public class GocCayEntity {
 
     // ==================== Constructor ====================
 
+    public GocCayEntity() {}
+
+
     public GocCayEntity(@NonNull String id,
                         String cayTrongId,
                         String userId,

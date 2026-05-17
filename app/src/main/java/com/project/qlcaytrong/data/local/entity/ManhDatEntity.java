@@ -53,6 +53,9 @@ public class ManhDatEntity {
 
     // ==================== Constructor ====================
 
+    public ManhDatEntity() {}
+
+
     public ManhDatEntity(@NonNull String id,
                          String userId,
                          String tenManhDat,

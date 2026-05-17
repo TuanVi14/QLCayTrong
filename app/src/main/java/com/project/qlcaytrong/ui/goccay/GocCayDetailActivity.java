@@ -94,11 +94,13 @@ public class GocCayDetailActivity extends AppCompatActivity {
         binding.tvMaQR.setText(maQRCode != null ? maQRCode : "N/A");
 
         // Vị trí
-        binding.tvViTri.setText(
+        android.widget.TextView tvViTri = findViewById(R.id.tvViTri);
+        tvViTri.setText(
             viTri != null && !viTri.isEmpty() ? viTri : getString(R.string.chua_co_vi_tri));
 
         // Ngày trồng
-        binding.tvNgayTrong.setText(ngayTrong > 0
+        android.widget.TextView tvNgayTrong = findViewById(R.id.tvNgayTrong);
+        tvNgayTrong.setText(ngayTrong > 0
             ? DATE_FMT.format(new Date(ngayTrong))
             : "—");
 

@@ -48,6 +48,8 @@ public class ChiTietTuoiPhanEntity {
     @ColumnInfo(name = "sync_status")
     private String syncStatus;
 
+    public ChiTietTuoiPhanEntity() {}
+
     public ChiTietTuoiPhanEntity(@NonNull String id, String nhatKyId, String userId,
                                  String tenPhan, double lieuLuong, String donVi,
                                  String cachBon, String syncStatus) {
