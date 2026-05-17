@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/spacing_base">
+
+        <!-- Avatar + User info -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/spacing_base"
+            app:cardCornerRadius="@dimen/radius_xl"
+            app:cardBackgroundColor="@color/colorPrimaryContainer">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="@dimen/spacing_xl"
+                android:gravity="center">
+                <TextView android:id="@+id/tvUserName"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Người dùng" android:textSize="@dimen/text_h6"
+                    android:textStyle="bold" android:textColor="@color/colorPrimary" />
+                <TextView android:id="@+id/tvUserEmail"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="email@example.com" android:textSize="@dimen/text_body1"
+                    android:textColor="@color/textSecondary" android:layout_marginTop="4dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Dark mode toggle -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/spacing_sm"
+            app:cardCornerRadius="@dimen/radius_lg">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="56dp"
+                android:orientation="horizontal" android:gravity="center_vertical"
+                android:paddingHorizontal="@dimen/spacing_base">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:text="@string/dark_mode"
+                    android:textSize="@dimen/text_body1" android:textColor="@color/textPrimary" />
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/switchDarkMode"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Version -->
+        <TextView android:id="@+id/tvVersion"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Phiên bản 1.0"
+            android:textSize="@dimen/text_caption" android:textColor="@color/textHint"
+            android:layout_gravity="center" android:layout_marginVertical="@dimen/spacing_base" />
+
+        <!-- Logout -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLogout"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="@string/dang_xuat"
+            android:textAllCaps="false"
+            app:backgroundTint="@color/colorError"
+            app:icon="@android:drawable/ic_lock_power_off"
+            android:layout_marginTop="@dimen/spacing_base" />
+
+    </LinearLayout>
+</ScrollView>

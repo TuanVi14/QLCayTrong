@@ -1,9 +1,82 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+
+    <!-- Material3 DayNight base -->
     <style name="Base.Theme.QLCayTrong" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- Brand colors -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
+        <item name="colorPrimaryContainer">@color/colorPrimaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/colorOnPrimaryContainer</item>
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorSecondaryContainer">@color/colorSecondaryContainer</item>
+        <item name="colorError">@color/colorError</item>
+        <item name="colorErrorContainer">@color/colorErrorContainer</item>
+        <item name="colorSurface">@color/colorSurface</item>
+        <item name="android:colorBackground">@color/colorBackground</item>
+        <item name="colorOutline">@color/colorOutline</item>
+
+        <!-- Typography: dùng Material3 default (Roboto) -->
+        <item name="textAppearanceBodyLarge">@style/TextAppearance.QLCayTrong.BodyLarge</item>
+        <item name="textAppearanceBodyMedium">@style/TextAppearance.QLCayTrong.BodyMedium</item>
+        <item name="textAppearanceTitleMedium">@style/TextAppearance.QLCayTrong.TitleMedium</item>
+
+        <!-- Window -->
+        <item name="android:windowBackground">@color/colorBackground</item>
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+
+        <!-- Splash (API 31+) -->
+        <item name="android:windowSplashScreenBackground">@color/colorPrimary</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/ic_splash_leaf</item>
     </style>
 
     <style name="Theme.QLCayTrong" parent="Base.Theme.QLCayTrong" />
+
+    <!-- NoActionBar variant (Auth screens, QR scan) -->
+    <style name="Theme.QLCayTrong.NoActionBar" parent="Theme.QLCayTrong">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!-- === Typography styles === -->
+    <style name="TextAppearance.QLCayTrong.BodyLarge"
+        parent="TextAppearance.Material3.BodyLarge">
+        <item name="android:textSize">@dimen/text_body1</item>
+        <item name="android:textColor">@color/textPrimary</item>
+    </style>
+
+    <style name="TextAppearance.QLCayTrong.BodyMedium"
+        parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textSize">@dimen/text_body2</item>
+        <item name="android:textColor">@color/textSecondary</item>
+    </style>
+
+    <style name="TextAppearance.QLCayTrong.TitleMedium"
+        parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textSize">@dimen/text_subtitle</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/textPrimary</item>
+    </style>
+
+    <!-- === Card style === -->
+    <style name="Widget.QLCayTrong.Card" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardCornerRadius">@dimen/radius_lg</item>
+        <item name="cardElevation">@dimen/card_elevation</item>
+        <item name="cardBackgroundColor">@color/colorCardBg</item>
+    </style>
+
+    <!-- === Dashboard stat card === -->
+    <style name="Widget.QLCayTrong.StatCard" parent="Widget.QLCayTrong.Card">
+        <item name="cardBackgroundColor">@color/colorPrimaryContainer</item>
+    </style>
+
+    <!-- === Button === -->
+    <style name="Widget.QLCayTrong.Button" parent="Widget.Material3.Button">
+        <item name="android:textAllCaps">false</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.QLCayTrong.Button</item>
+    </style>
+
+    <style name="ShapeAppearance.QLCayTrong.Button" parent="ShapeAppearance.Material3.Corner.Full">
+        <item name="cornerRadius">@dimen/radius_lg</item>
+    </style>
 </resources>

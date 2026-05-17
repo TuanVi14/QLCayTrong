@@ -43,6 +43,13 @@ public interface NhatKyDao {
     @Query("SELECT * FROM nhat_ky WHERE loai_nhat_ky = :loaiNhatKy AND user_id = :userId ORDER BY ngay_thuc_hien DESC")
     LiveData<List<NhatKyEntity>> getAllByLoai(String loaiNhatKy, String userId);
 
+    /** Alias dùng trong NhatKyViewModel.getByLoai() */
+    @Query("SELECT * FROM nhat_ky WHERE loai_nhat_ky = :loai AND user_id = :userId ORDER BY ngay_thuc_hien DESC")
+    LiveData<List<NhatKyEntity>> getAllByLoaiAndUserId(String loai, String userId);
+
+    @Query("SELECT * FROM nhat_ky WHERE goc_cay_id = :gocCayId AND loai_nhat_ky = :loai ORDER BY ngay_thuc_hien DESC")
+    LiveData<List<NhatKyEntity>> getAllByGocCayAndLoai(String gocCayId, String loai);
+
     @Query("SELECT * FROM nhat_ky WHERE sync_status = 'PENDING'")
     List<NhatKyEntity> getAllPendingSync();
 

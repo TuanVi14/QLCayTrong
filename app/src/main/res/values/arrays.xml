@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Đơn vị diện tích (ManhDat) -->
+    <string-array name="don_vi_dien_tich">
+        <item>m²</item>
+        <item>ha</item>
+        <item>sào</item>
+        <item>mẫu</item>
+        <item>công</item>
+    </string-array>
+
+    <!-- Trạng thái cây trồng (CayTrong) -->
+    <string-array name="trang_thai_cay_trong">
+        <item>Đang trồng</item>
+        <item>Thu hoạch được</item>
+        <item>Hư hỏng</item>
+    </string-array>
+    <!-- Giá trị nội bộ mapping với trang_thai_cay_trong -->
+    <string-array name="trang_thai_cay_trong_values">
+        <item>DANG_TRONG</item>
+        <item>THU_HOACH</item>
+        <item>HU_HONG</item>
+    </string-array>
+
+    <!-- Đơn vị tính (CayTrong) -->
+    <string-array name="don_vi_tinh_cay">
+        <item>cây</item>
+        <item>hạt</item>
+        <item>bụi</item>
+        <item>hàng</item>
+        <item>luống</item>
+    </string-array>
+
+    <!-- Trạng thái gốc cây (GocCay) -->
+    <string-array name="trang_thai_goc_cay">
+        <item>Tốt</item>
+        <item>Bình thường</item>
+        <item>Xấu</item>
+        <item>Chết</item>
+    </string-array>
+    <string-array name="trang_thai_goc_cay_values">
+        <item>TOT</item>
+        <item>BINH_THUONG</item>
+        <item>XAU</item>
+        <item>CHET</item>
+    </string-array>
+</resources>

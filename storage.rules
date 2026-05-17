@@ -1,0 +1,50 @@
+// File: storage.rules — Firebase Storage Security Rules
+// Deploy: firebase deploy --only storage
+
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    // ============================================================
+    // Rule 1: Ảnh nhật ký của user — users/{userId}/nhat_ky/{...}
+    // ============================================================
+    // User chỉ có thể đọc/ghi ảnh trong thư mục của chính mình.
+    // request.auth.uid phải khớp với {userId} trong path.
+    //
+    // Ví dụ path: users/abc123/nhat_ky/ghi456/1716000000000.jpg
+    //
+    // allow read: chỉ owner đọc được (ảnh nhật ký là private)
+    // allow write conditions:
+    //   - Phải đăng nhập (request.auth != null)
+    //   - Chỉ upload ảnh (contentType phải là image/*)
+    //   - Giới hạn 5MB / file (tránh lạm dụng storage)
+    //   - Chỉ write vào path của mình (uid match)
+    //
+    match /users/{userId}/nhat_ky/{nhatKyId}/{fileName} {
+
+      // Đọc: chỉ owner
+      allow read: if request.auth != null
+                  && request.auth.uid == userId;
+
+      // Ghi: owner + validate file type + size
+      allow write: if request.auth != null
+                   && request.auth.uid == userId
+                   && request.resource.contentType.matches('image/.*')
+                   && request.resource.size <= 5 * 1024 * 1024; // 5 MB
+
+      // Xóa: chỉ owner
+      allow delete: if request.auth != null
+                    && request.auth.uid == userId;
+    }
+
+    // ============================================================
+    // Rule 2: Các path khác — DENY tất cả (security by default)
+    // ============================================================
+    // Nếu không match rule nào ở trên → tự động denied.
+    // Không cần viết thêm rule deny tường minh.
+    //
+    // Lưu ý: Firebase Storage không có wildcard catch-all deny như Firestore.
+    // Mặc định của Storage đã là DENY nếu không có rule allow.
+  }
+}

@@ -2,4 +2,63 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- === Material You — Brand (Green Agriculture) === -->
+    <color name="colorPrimary">#2E7D32</color>
+    <color name="colorPrimaryDark">#1B5E20</color>
+    <color name="colorPrimaryLight">#4CAF50</color>
+    <color name="colorPrimaryContainer">#C8E6C9</color>
+    <color name="colorOnPrimaryContainer">#002106</color>
+    <color name="colorAccent">#FF8F00</color>
+    <color name="colorSurface">#FFFBFE</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="colorError">#D32F2F</color>
+    <color name="colorErrorContainer">#FFCDD2</color>
+
+    <!-- Secondary (Amber — thu hoạch) -->
+    <color name="colorSecondary">#F57F17</color>
+    <color name="colorSecondaryContainer">#FFF9C4</color>
+
+    <!-- === Background / Surface === -->
+    <color name="colorBackground">#F1F8E9</color>
+    <color name="colorCardBg">#FFFFFF</color>
+    <color name="colorSurfaceVariant">#E8F5E9</color>
+    <color name="colorOutline">#79747E</color>
+
+    <!-- === Dark mode overrides (used in values-night/colors.xml) === -->
+    <!-- defined separately in values-night -->
+
+    <!-- === Status / Badge === -->
+    <color name="swipe_delete_bg">#FFCDD2</color>
+    <color name="badge_tot">#2E7D32</color>
+    <color name="badge_trung_binh">#F57F17</color>
+    <color name="badge_kem">#C62828</color>
+    <color name="badge_binh_thuong">#E65100</color>
+    <color name="badge_xau">#C62828</color>
+
+    <!-- Chip background opacity colors -->
+    <color name="chip_green_bg">#1A2E7D32</color>
+    <color name="chip_red_bg">#1AC62828</color>
+    <color name="chip_orange_bg">#1AE65100</color>
+
+    <!-- === CayTrong trangThai === -->
+    <color name="status_dang_trong">#1B5E20</color>
+    <color name="status_thu_hoach">#F57F17</color>
+    <color name="status_hu_hong">#B71C1C</color>
+
+    <!-- === Typography === -->
+    <color name="textPrimary">#212121</color>
+    <color name="textSecondary">#757575</color>
+    <color name="textHint">#BDBDBD</color>
+    <color name="textOnColor">#FFFFFF</color>
+
+    <!-- === DanhGiaChamSoc score colors === -->
+    <color name="score_excellent">#2E7D32</color>  <!-- 80-100 -->
+    <color name="score_good">#689F38</color>        <!-- 60-79 -->
+    <color name="score_average">#F57F17</color>     <!-- 40-59 -->
+    <color name="score_poor">#E53935</color>        <!-- 0-39 -->
+
+    <!-- BottomNav -->
+    <color name="bottom_nav_selected">#2E7D32</color>
+    <color name="bottom_nav_unselected">#9E9E9E</color>
 </resources>

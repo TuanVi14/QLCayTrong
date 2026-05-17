@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- activity_nhat_ky_detail.xml -->
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Card 1: Thông tin nhật ký -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="14dp" app:cardElevation="3dp"
+                android:layout_marginBottom="12dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="16dp">
+
+                    <!-- Loại + Ngày -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical"
+                        android:layout_marginBottom="12dp">
+                        <TextView android:id="@+id/tvLoai"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:paddingHorizontal="12dp" android:paddingVertical="5dp"
+                            android:textColor="@color/white" android:textSize="12sp" android:textStyle="bold"
+                            android:background="@drawable/bg_chip_green" />
+                        <View android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1" />
+                        <TextView android:id="@+id/tvNgayThucHien"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:textSize="12sp" android:textColor="@color/textHint" />
+                    </LinearLayout>
+
+                    <!-- Người thực hiện -->
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="@string/nguoi_thuc_hien" android:textSize="11sp"
+                        android:textColor="@color/textHint" android:layout_marginBottom="2dp" />
+                    <TextView android:id="@+id/tvNguoiThucHien"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:textSize="14sp" android:textColor="@color/textPrimary"
+                        android:layout_marginBottom="12dp" />
+
+                    <!-- Ghi chú -->
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="@string/ghi_chu" android:textSize="11sp"
+                        android:textColor="@color/textHint" android:layout_marginBottom="2dp" />
+                    <TextView android:id="@+id/tvGhiChu"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:textSize="14sp" android:textColor="@color/textPrimary"
+                        android:lineSpacingExtra="3dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Card 2: ChiTiet Tưới phân -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardTuoiPhan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp" app:cardElevation="2dp"
+                android:layout_marginBottom="12dp"
+                android:visibility="gone">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="14dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical"
+                        android:layout_marginBottom="10dp">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="@string/chi_tiet_phan"
+                            android:textSize="14sp" android:textStyle="bold"
+                            android:textColor="@color/textPrimary" />
+                        <TextView android:id="@+id/tvTuoiPhanCount"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:textSize="11sp" android:textColor="@color/textHint" />
+                    </LinearLayout>
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvTuoiPhan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Card 3: ChiTiet Phun thuốc -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardPhunThuoc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp" app:cardElevation="2dp"
+                android:layout_marginBottom="12dp"
+                android:visibility="gone">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="14dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical"
+                        android:layout_marginBottom="10dp">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="@string/chi_tiet_thuoc"
+                            android:textSize="14sp" android:textStyle="bold"
+                            android:textColor="@color/textPrimary" />
+                        <TextView android:id="@+id/tvPhunThuocCount"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:textSize="11sp" android:textColor="@color/textHint" />
+                    </LinearLayout>
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvPhunThuoc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Card 4: Ảnh nhật ký (Bước 9 - Firebase Storage) -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                android:layout_marginBottom="12dp">
+
+                <LinearLayout
+                    android:id="@+id/layoutHinhAnh"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <!-- Ảnh (ẩn khi chưa có) -->
+                    <ImageView
+                        android:id="@+id/ivHinhAnh"
+                        android:layout_width="match_parent"
+                        android:layout_height="220dp"
+                        android:scaleType="centerCrop"
+                        android:contentDescription="@string/hinh_anh_nhat_ky"
+                        android:visibility="gone" />
+
+                    <!-- Placeholder (hiện khi chưa có ảnh) -->
+                    <LinearLayout
+                        android:id="@+id/layoutPlaceholder"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:orientation="vertical"
+                        android:gravity="center">
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@android:drawable/ic_menu_camera"
+                            android:tint="@color/colorPrimary"
+                            android:alpha="0.4"
+                            android:contentDescription="@null" />
+                        <TextView
+                            android:id="@+id/tvHinhAnhHint"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/tap_de_them_anh"
+                            android:textColor="@color/textHint"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+
+                    <!-- Upload Progress (ẩn khi không upload) -->
+                    <LinearLayout
+                        android:id="@+id/uploadProgressContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="8dp"
+                        android:visibility="gone">
+                        <ProgressBar
+                            android:id="@+id/uploadProgressBar"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="0dp"
+                            android:layout_height="8dp"
+                            android:layout_weight="1"
+                            android:max="100"
+                            android:progress="0" />
+                        <TextView
+                            android:id="@+id/tvUploadPercent"
+                            android:layout_width="40dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="0%"
+                            android:textSize="11sp"
+                            android:textColor="@color/textSecondary"
+                            android:gravity="end" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+
+            <!-- Actions -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp" app:cardElevation="2dp"
+                android:layout_marginBottom="16dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:padding="12dp">
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnEdit"
+                        android:layout_width="0dp" android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:text="@string/chinh_sua" android:textSize="14sp"
+                        app:cornerRadius="10dp" android:layout_marginEnd="8dp" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnDelete"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="wrap_content" android:layout_height="48dp"
+                        android:text="@string/xoa" android:textSize="14sp"
+                        app:cornerRadius="10dp"
+                        app:strokeColor="@color/colorError"
+                        android:textColor="@color/colorError" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

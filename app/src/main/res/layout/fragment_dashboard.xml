@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/swipeRefresh"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_base">
+
+            <!-- Header -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dashboard_title"
+                android:textSize="@dimen/text_h5"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginBottom="@dimen/spacing_base" />
+
+            <!-- === Stat cards === -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/spacing_base">
+
+                <!-- Mảnh đất -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp" android:layout_height="@dimen/dashboard_stat_card_height"
+                    android:layout_weight="1" android:layout_marginEnd="@dimen/spacing_sm"
+                    app:cardCornerRadius="@dimen/radius_lg" app:cardElevation="@dimen/card_elevation"
+                    app:cardBackgroundColor="@color/colorPrimaryContainer">
+                    <LinearLayout android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical" android:gravity="center">
+                        <TextView android:id="@+id/tvStatManhDat"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="0" android:textSize="@dimen/text_h5" android:textStyle="bold"
+                            android:textColor="@color/colorPrimary" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="@string/stat_manh_dat" android:textSize="@dimen/text_caption"
+                            android:textColor="@color/textSecondary" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Cây trồng -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp" android:layout_height="@dimen/dashboard_stat_card_height"
+                    android:layout_weight="1" android:layout_marginHorizontal="@dimen/spacing_xs"
+                    app:cardCornerRadius="@dimen/radius_lg" app:cardElevation="@dimen/card_elevation"
+                    app:cardBackgroundColor="@color/colorPrimaryContainer">
+                    <LinearLayout android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical" android:gravity="center">
+                        <TextView android:id="@+id/tvStatCayTrong"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="0" android:textSize="@dimen/text_h5" android:textStyle="bold"
+                            android:textColor="@color/colorPrimary" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="@string/stat_cay_trong" android:textSize="@dimen/text_caption"
+                            android:textColor="@color/textSecondary" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Nhật ký hôm nay -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp" android:layout_height="@dimen/dashboard_stat_card_height"
+                    android:layout_weight="1" android:layout_marginStart="@dimen/spacing_sm"
+                    app:cardCornerRadius="@dimen/radius_lg" app:cardElevation="@dimen/card_elevation"
+                    app:cardBackgroundColor="@color/colorSecondaryContainer">
+                    <LinearLayout android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical" android:gravity="center">
+                        <TextView android:id="@+id/tvStatNhatKy"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="0" android:textSize="@dimen/text_h5" android:textStyle="bold"
+                            android:textColor="@color/colorSecondary" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="@string/stat_nhat_ky_hom_nay" android:textSize="@dimen/text_caption"
+                            android:textColor="@color/textSecondary" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <!-- === Warning card (bỏ quên) === -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardWarning"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_base"
+                app:cardCornerRadius="@dimen/radius_lg"
+                app:cardBackgroundColor="@color/colorErrorContainer"
+                android:visibility="gone">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:padding="@dimen/spacing_base"
+                    android:gravity="center_vertical">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:id="@+id/tvWarning"
+                        android:textColor="@color/colorError" android:textSize="@dimen/text_body1" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- === Mảnh đất nổi bật (ngang) === -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="@string/dashboard_manh_dat"
+                android:textSize="@dimen/text_subtitle" android:textStyle="bold"
+                android:textColor="@color/textPrimary"
+                android:layout_marginBottom="@dimen/spacing_sm" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvManhDat"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_lg"
+                android:clipToPadding="false"
+                android:paddingHorizontal="@dimen/spacing_xs"
+                android:overScrollMode="never" />
+
+            <!-- === Nhật ký gần nhất === -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical"
+                android:layout_marginBottom="@dimen/spacing_sm">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:text="@string/dashboard_nhat_ky_gan_nhat"
+                    android:textSize="@dimen/text_subtitle" android:textStyle="bold"
+                    android:textColor="@color/textPrimary" />
+            </LinearLayout>
+
+            <TextView android:id="@+id/tvEmptyNhatKy"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="@string/chua_co_nhat_ky"
+                android:textColor="@color/textHint" android:textSize="@dimen/text_body1"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvRecentNhatKy"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:overScrollMode="never" />
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

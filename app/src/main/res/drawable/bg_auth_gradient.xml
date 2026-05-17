@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    File: app/src/main/res/drawable/bg_auth_gradient.xml
+    Gradient xanh lá → xanh dương cho màn hình Auth
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:angle="135"
+        android:startColor="#1B5E20"
+        android:centerColor="#2E7D32"
+        android:endColor="#1565C0"
+        android:type="linear" />
+</shape>

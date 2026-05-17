@@ -1,3 +1,208 @@
 <resources>
-    <string name="app_name">QLCayTrong</string>
+    <string name="app_name">QL Cây Trồng</string>
+
+    <!-- Common Actions -->
+    <string name="luu">Lưu</string>
+    <string name="sua">Sửa</string>
+    <string name="xoa">Xóa</string>
+    <string name="huy">Hủy</string>
+    <string name="them">Thêm</string>
+    <string name="dong_y">Đồng ý</string>
+    <string name="mo_ta">Mô tả</string>
+    <string name="ngay_tao">Ngày tạo</string>
+    <string name="don_vi">Đơn vị</string>
+
+    <!-- Common Dialog -->
+    <string name="dialog_xoa_title">Xác nhận xóa</string>
+    <string name="dialog_xoa_message">Bạn có chắc muốn xóa \"%s\" không?\nThao tác này không thể hoàn tác.</string>
+
+    <!-- Common Status -->
+    <string name="luu_thanh_cong">Lưu thành công!</string>
+    <string name="cap_nhat_thanh_cong">Cập nhật thành công!</string>
+    <string name="xoa_thanh_cong">Đã xóa thành công.</string>
+    <string name="chua_dong_bo">Chờ đồng bộ</string>
+    <string name="dong_bo_that_bai">Đồng bộ lỗi</string>
+    <string name="error_sync">Không thể đồng bộ. Kiểm tra kết nối mạng.</string>
+    <string name="error_xoa">Xóa thất bại. Vui lòng thử lại.</string>
+
+    <!-- ManhDat -->
+    <string name="manh_dat_title">Quản Lý Mảnh Đất</string>
+    <string name="ten_manh_dat">Tên mảnh đất *</string>
+    <string name="dia_chi">Địa chỉ</string>
+    <string name="dien_tich">Diện tích *</string>
+    <string name="them_manh_dat">Thêm mảnh đất</string>
+    <string name="sua_manh_dat">Sửa mảnh đất</string>
+    <string name="them_thanh_cong">Thêm thành công!</string>
+    <string name="chua_co_manh_dat">Chưa có mảnh đất nào</string>
+    <string name="nhan_de_them_manh_dat">Nhấn nút + để thêm mảnh đất đầu tiên</string>
+    <string name="chua_co_dia_chi">Chưa có địa chỉ</string>
+
+    <!-- CayTrong -->
+    <string name="cay_trong_title">Cây Trồng</string>
+    <string name="them_cay_trong">Thêm cây trồng</string>
+    <string name="sua_cay_trong">Sửa cây trồng</string>
+    <string name="loai_cay">Loại cây *</string>
+    <string name="ten_khoa_hoc">Tên khoa học</string>
+    <string name="so_luong">Số lượng *</string>
+    <string name="don_vi_tinh">Đơn vị tính *</string>
+    <string name="ngay_trong">Ngày trồng *</string>
+    <string name="trang_thai">Trạng thái</string>
+    <string name="chua_co_cay_trong">Chưa có cây trồng nào</string>
+    <string name="nhan_de_them_cay_trong">Nhấn + để thêm cây trồng đầu tiên</string>
+    <string name="them_cay_trong_thanh_cong">Thêm cây trồng thành công!</string>
+    <string name="vuot_de_xoa">Vuốt sang trái để xóa</string>
+    <string name="chon_ngay">Chọn ngày</string>
+    <string name="trang_thai_dang_trong">Đang trồng</string>
+    <string name="trang_thai_thu_hoach">Thu hoạch được</string>
+    <string name="trang_thai_hu_hong">Hư hỏng</string>
+
+    <!-- GocCay -->
+    <string name="goc_cay_title">Gốc Cây</string>
+    <string name="them_goc_cay">Thêm gốc cây</string>
+    <string name="sua_goc_cay">Sửa gốc cây</string>
+    <string name="vi_tri">Vị trí</string>
+    <string name="ghi_chu">Ghi chú</string>
+    <string name="ma_qr">Mã QR</string>
+    <string name="chua_co_goc_cay">Chưa có gốc cây nào</string>
+    <string name="nhan_de_them_goc_cay">Nhấn + để thêm gốc cây đầu tiên</string>
+    <string name="them_goc_cay_thanh_cong">Thêm gốc cây thành công!</string>
+    <string name="xem_qr">Xem QR</string>
+    <string name="trang_thai_tot">Tốt</string>
+    <string name="trang_thai_binh_thuong">Bình thường</string>
+    <string name="trang_thai_xau">Xấu</string>
+    <string name="trang_thai_chet">Chết</string>
+
+    <!-- QR Scan -->
+    <string name="quet_qr_title">Quét QR Code</string>
+    <string name="bat_dau_quet">Bắt đầu quét</string>
+    <string name="quet_lai">Quét lại</string>
+    <string name="qr_scan_hint">Hướng camera vào mã QR trên gốc cây để tra cứu thông tin nhanh chóng.</string>
+    <string name="qr_scan_prompt">Đưa mã QR vào khung để quét</string>
+    <string name="qr_scan_cancelled">Đã hủy quét QR.</string>
+    <string name="qr_last_scan">Mã vừa quét: %s</string>
+    <string name="ket_qua_gan_nhat">Kết quả quét gần nhất</string>
+    <string name="dang_tim_kiem">Đang tìm kiếm…</string>
+
+    <!-- QR Not Found -->
+    <string name="qr_not_found_title">Không tìm thấy</string>
+    <string name="qr_not_found_message">Không tìm thấy gốc cây với mã QR:\n\"%s\"\n\nMã QR này chưa được đăng ký hoặc đã bị xóa.</string>
+    <string name="dong">Đóng</string>
+
+    <!-- Camera Permission -->
+    <string name="camera_permission_title">Quyền truy cập Camera</string>
+    <string name="camera_permission_rationale">Ứng dụng cần quyền camera để quét mã QR trên gốc cây. Vui lòng cấp quyền để tiếp tục.</string>
+    <string name="camera_permission_denied_title">Không có quyền Camera</string>
+    <string name="camera_permission_denied_message">Bạn đã từ chối quyền camera vĩnh viễn. Vào Cài đặt → Ứng dụng → QL Cây Trồng → Quyền → Camera để bật lại.</string>
+    <string name="mo_cai_dat">Mở Cài đặt</string>
+
+    <!-- GocCay Detail -->
+    <string name="goc_cay_detail_title">Chi Tiết Gốc Cây</string>
+    <string name="thong_tin_goc_cay">Thông tin gốc cây</string>
+    <string name="chua_co_vi_tri">Chưa có vị trí</string>
+    <string name="khong_co_ghi_chu">Không có ghi chú</string>
+    <string name="chinh_sua_goc_cay">Chỉnh sửa gốc cây</string>
+    <string name="xem_nhat_ky">Xem nhật ký chăm sóc</string>
+    <string name="quet_qr_moi">Quét mã QR khác</string>
+
+    <!-- QR Generate / Save / Share -->
+    <string name="luu_qr">Lưu QR</string>
+    <string name="chia_se_qr">Chia sẻ</string>
+    <string name="chia_se_qr_title">Chia sẻ QR Code</string>
+    <string name="qr_luu_thanh_cong">Đã lưu QR vào Thư viện ảnh!</string>
+    <string name="qr_luu_that_bai">Lưu QR thất bại. Vui lòng thử lại.</string>
+    <string name="qr_share_error">Không thể chia sẻ QR. Thử lưu trước rồi chia sẻ.</string>
+    <string name="qr_chua_tao">QR chưa được tạo. Vui lòng chờ.</string>
+    <string name="qr_generate_error">Không thể tạo QR Code.</string>
+    <string name="qr_khong_co_ma">Không có mã QR để hiển thị.</string>
+    <string name="xem">Xem</string>
+
+    <!-- NhatKy List -->
+    <string name="nhat_ky_title">Nhật Ký Chăm Sóc</string>
+    <string name="tat_ca">Tất cả</string>
+    <string name="loai_nhat_ky">Loại nhật ký</string>
+    <string name="loai_tuoi_phan">Tưới phân</string>
+    <string name="loai_phun_thuoc">Phun thuốc</string>
+    <string name="loai_tinh_hinh">Tình hình</string>
+    <string name="loai_thu_hoach">Thu hoạch</string>
+    <string name="chua_co_nhat_ky">Chưa có nhật ký nào</string>
+    <string name="them_nhat_ky">Thêm nhật ký</string>
+    <string name="dialog_xoa_nhat_ky">Xóa nhật ký này? Tất cả chi tiết liên quan cũng sẽ bị xóa.</string>
+
+    <!-- NhatKy Form -->
+    <string name="sua_nhat_ky">Sửa nhật ký</string>
+    <string name="them_nhat_ky_thanh_cong">Đã lưu nhật ký!</string>
+    <string name="ngay_thuc_hien">Ngày thực hiện</string>
+    <string name="nguoi_thuc_hien">Người thực hiện</string>
+    <string name="thong_tin_chung">Thông tin chung</string>
+
+    <!-- ChiTiet -->
+    <string name="chi_tiet_phan">Chi tiết phân bón</string>
+    <string name="chi_tiet_thuoc">Chi tiết thuốc</string>
+    <string name="ten_phan">Tên phân bón</string>
+    <string name="ten_thuoc">Tên thuốc</string>
+    <string name="lieu_luong">Liều lượng</string>
+    <string name="don_vi">Đơn vị</string>
+    <string name="cach_bon">Cách bón</string>
+    <string name="ly_do_phun">Lý do phun</string>
+    <string name="them_dong">+ Thêm dòng</string>
+    <string name="so_dong_chi_tiet">%d dòng chi tiết</string>
+
+    <!-- Validation -->
+    <string name="error_lieu_luong">Liều lượng phải lớn hơn 0.</string>
+    <string name="error_ten_thuoc">Tên thuốc không được để trống.</string>
+
+    <!-- NhatKy Detail -->
+    <string name="nhat_ky_detail_title">Chi Tiết Nhật Ký</string>
+    <string name="khong_ro">Không rõ</string>
+    <string name="hinh_anh_placeholder">Ảnh (Bước 9 — Firebase Storage)</string>
+    <string name="xem_nhat_ky">Xem nhật ký</string>
+    <string name="chinh_sua">Chỉnh sửa</string>
+
+    <!-- Firebase Storage / Ảnh -->
+    <string name="chon_nguon_anh">Chọn nguồn ảnh</string>
+    <string name="chup_anh_moi">Chụp ảnh mới (Camera)</string>
+    <string name="chon_tu_thu_vien">Chọn từ Thư viện</string>
+    <string name="tap_de_them_anh">Tap để thêm ảnh</string>
+    <string name="hinh_anh_nhat_ky">Ảnh nhật ký</string>
+    <string name="upload_anh_thanh_cong">Đã tải ảnh lên thành công!</string>
+    <string name="upload_anh_that_bai">Tải ảnh lên thất bại. Thử lại?</string>
+    <string name="thu_lai">Thử lại</string>
+    <string name="dang_tai_anh">Đang tải ảnh lên…</string>
+    <!-- Bước 11: Navigation -->
+    <string name="nav_dashboard">Trang chủ</string>
+    <string name="nav_manh_dat">Mảnh đất</string>
+    <string name="nav_nhat_ky">Nhật ký</string>
+    <string name="nav_cai_dat">Cài đặt</string>
+
+    <!-- Dashboard -->
+    <string name="dashboard_title">Tổng quan</string>
+    <string name="stat_manh_dat">Mảnh đất</string>
+    <string name="stat_cay_trong">Cây trồng</string>
+    <string name="stat_nhat_ky_hom_nay">Hôm nay</string>
+    <string name="dashboard_manh_dat">Mảnh đất của bạn</string>
+    <string name="dashboard_nhat_ky_gan_nhat">Nhật ký gần nhất</string>
+    <string name="chua_co_nhat_ky">Chưa có nhật ký nào</string>
+    <string name="canh_bao_bo_quen">cây chưa được chăm sóc &gt; 7 ngày!</string>
+
+    <!-- DanhGiaChamSoc -->
+    <string name="danh_gia_cham_soc">Đánh giá chăm sóc</string>
+    <string name="diem_cham_soc">Điểm chăm sóc</string>
+    <string name="muc_do_tot">Tốt</string>
+    <string name="muc_do_kha">Khá</string>
+    <string name="muc_do_trung_binh">Trung bình</string>
+    <string name="muc_do_kem">Kém</string>
+    <string name="loi_khuyen">Lời khuyên</string>
+    <string name="canh_bao_cay_yeu">⚠ Cây cần được chú ý ngay!</string>
+
+    <!-- Settings -->
+    <string name="dark_mode">Chế độ tối</string>
+    <string name="phien_ban">Phiên bản</string>
+    <string name="dang_xuat">Đăng xuất</string>
+    <string name="thong_tin_tai_khoan">Thông tin tài khoản</string>
+
+    <!-- UX Polish -->
+    <string name="undo">Hoàn tác</string>
+    <string name="da_xoa">Đã xóa</string>
+    <string name="dang_tai">Đang tải...</string>
+    <string name="lam_moi">Làm mới</string>
 </resources>

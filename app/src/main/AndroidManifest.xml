@@ -2,7 +2,25 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Quyền internet cho Firebase -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- Camera + Storage cho QR Code và ảnh nhật ký -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- API 28 trở xuống cần WRITE để lưu ảnh vào MediaStore -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"
+        tools:ignore="SelectivePermissionErrors" />
+    <!-- uses-feature: camera không bắt buộc (không bị block ở thiết bị không có camera) -->
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+
     <application
+        android:name=".QLCayTrongApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -11,15 +29,115 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.QLCayTrong">
+
+        <!-- SplashActivity là launcher -->
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".ui.auth.SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.QLCayTrong.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".ui.auth.LoginActivity"
+            android:exported="false"
+            android:theme="@style/Theme.QLCayTrong.NoActionBar"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".ui.auth.RegisterActivity"
+            android:exported="false"
+            android:theme="@style/Theme.QLCayTrong.NoActionBar"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.manhdat.ManhDatListActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".ui.manhdat.ManhDatFormActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- CayTrong -->
+        <activity
+            android:name=".ui.caytrong.CayTrongListActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".ui.caytrong.CayTrongFormActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- GocCay -->
+        <activity
+            android:name=".ui.goccay.GocCayListActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".ui.goccay.GocCayFormActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- GocCay Detail -->
+        <activity
+            android:name=".ui.goccay.GocCayDetailActivity"
+            android:exported="false" />
+
+        <!-- QR -->
+        <!-- screenOrientation="fullSensor" là yêu cầu của ZXing CaptureActivity -->
+        <activity
+            android:name=".ui.qr.QrScanActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.qr.CustomCaptureActivity"
+            android:exported="false"
+            android:screenOrientation="fullSensor"
+            android:stateNotNeeded="true"
+            android:theme="@style/Theme.QLCayTrong.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <!-- NhatKy -->
+        <activity
+            android:name=".ui.nhatky.NhatKyListActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".ui.nhatky.NhatKyFormActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".ui.nhatky.NhatKyDetailActivity"
+            android:exported="false" />
+
+        <!--
+          FileProvider — cung cấp content:// URI an toàn cho Camera (Android 7+).
+          authority phải khớp với ImageUtils.AUTHORITY và grantUriPermissions="true".
+          resource: res/xml/file_paths.xml — định nghĩa thư mục được chia sẻ.
+        -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.project.qlcaytrong.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
     </application>
 
 </manifest>

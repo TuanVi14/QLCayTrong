@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  file_paths.xml — cấu hình FileProvider cho camera capture (Android 7+)
+
+  == Tại sao cần FileProvider? ==
+  Android 7 (API 24) trở lên KHÔNG cho phép chia sẻ file:// URI giữa các app
+  (bao gồm Camera app). Nếu dùng file:// trực tiếp → FileUriExposedException crash.
+  FileProvider wrap file path thành content:// URI an toàn với permission tạm thời.
+
+  == Các path type ==
+  - external-path: Environment.getExternalStorageDirectory() (thẻ SD / bộ nhớ ngoài)
+  - external-cache-path: Context.getExternalCacheDir() (không cần READ_EXTERNAL_STORAGE)
+  - files-path: Context.getFilesDir() (internal storage)
+  - cache-path: Context.getCacheDir() (internal cache)
+
+  Dùng external-cache-path vì:
+  1. Không cần thêm WRITE_EXTERNAL_STORAGE permission trên API 29+
+  2. File tạm — camera ghi vào đây, sau đó ta upload lên Firebase rồi xóa
+  3. Android tự dọn cache khi thiếu bộ nhớ
+-->
+<paths>
+    <!-- Ảnh chụp camera lưu vào external cache -->
+    <external-cache-path name="camera_photos" path="/" />
+    <!-- Backup cho một số device lưu vào internal cache -->
+    <cache-path name="camera_photos_internal" path="/" />
+</paths>

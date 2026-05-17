@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/dashboardFragment"
+        android:icon="@drawable/ic_dashboard"
+        android:title="@string/nav_dashboard" />
+    <item
+        android:id="@+id/manhDatFragment"
+        android:icon="@drawable/ic_field"
+        android:title="@string/nav_manh_dat" />
+    <item
+        android:id="@+id/nhatKyFragment"
+        android:icon="@drawable/ic_notebook"
+        android:title="@string/nav_nhat_ky" />
+    <item
+        android:id="@+id/settingsFragment"
+        android:icon="@drawable/ic_settings"
+        android:title="@string/nav_cai_dat" />
+</menu>

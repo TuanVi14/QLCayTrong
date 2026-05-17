@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Dark mode color overrides -->
+<resources>
+    <color name="colorBackground">#121212</color>
+    <color name="colorCardBg">#1E1E1E</color>
+    <color name="colorSurface">#1C1B1F</color>
+    <color name="colorSurfaceVariant">#1A2E1E</color>
+    <color name="textPrimary">#EFEFEF</color>
+    <color name="textSecondary">#BDBDBD</color>
+    <color name="textHint">#757575</color>
+    <color name="colorPrimaryContainer">#1B5E20</color>
+    <color name="colorOnPrimaryContainer">#C8E6C9</color>
+</resources>

@@ -37,8 +37,14 @@ public interface ChiTietPhunThuocDao {
     @Query("SELECT * FROM chi_tiet_phun_thuoc WHERE nhat_ky_id = :nhatKyId")
     LiveData<List<ChiTietPhunThuocEntity>> getAllByNhatKyId(String nhatKyId);
 
+    @Query("SELECT * FROM chi_tiet_phun_thuoc WHERE nhat_ky_id = :nhatKyId")
+    List<ChiTietPhunThuocEntity> getAllByNhatKyIdSync(String nhatKyId);
+
     @Query("SELECT * FROM chi_tiet_phun_thuoc WHERE sync_status = 'PENDING'")
     List<ChiTietPhunThuocEntity> getAllPendingSync();
+
+    @Query("DELETE FROM chi_tiet_phun_thuoc WHERE nhat_ky_id = :nhatKyId")
+    void deleteByNhatKyId(String nhatKyId);
 
     @Query("DELETE FROM chi_tiet_phun_thuoc")
     void deleteAll();
