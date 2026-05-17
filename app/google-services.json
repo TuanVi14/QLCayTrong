@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "374748538904",
+    "project_id": "qlcaytrong",
+    "storage_bucket": "qlcaytrong.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:374748538904:android:cf4f1cc0d0a2f7b1837b6d",
+        "android_client_info": {
+          "package_name": "com.project.qlcaytrong"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMbYQIQy5COshug-WWO7rI5QThN20pPsI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
